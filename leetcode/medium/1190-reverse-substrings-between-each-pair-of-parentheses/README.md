@@ -49,35 +49,55 @@ Explanation: First, we reverse the substring "oc", then "etco", and finally, the
 ## Solution
 
 **Language:** Java  
-**Runtime:** 38 ms (beats 5.27%)  
-**Memory:** 47.5 MB (beats 6.12%)  
-**Submitted:** 2026-09-27T04:14:49.230Z  
+**Runtime:** 12 ms (beats 35.97%)  
+**Memory:** 43.2 MB (beats 75.11%)  
+**Submitted:** 2026-09-27T04:32:42.895Z  
 
 ```java
 class Solution {
     public String reverseParentheses(String s) {
-        Stack <Character> st=new Stack<>();
-        for(int i=0;i<s.length();i++){
-            char c=s.charAt(i);
-            if(c!=')')
-            st.push(c);
-            else {
-                String x="";
-                while(!st.isEmpty() &&st.peek()!='('){
-                    x=x+st.pop();}
-                    st.pop();
-                
-                for(int j=0;j<x.length();j++)
-                st.push(x.charAt(j));
+        StringBuilder sb=new StringBuilder(s);
 
+        int i=0;
+        int j=1;
+
+        while(j<sb.length()){
+            if(sb.charAt(i)=='('){
+                if(sb.charAt(j)=='('){
+                    i=j;
+                    j++;
+                }
+                else if(sb.charAt(j)==')'){
+                    rev(sb,i+1,j-1);
+
+                    sb.deleteCharAt(j);
+                    sb.deleteCharAt(i);
+
+                    i=0;
+                    j=1;
+                }
+                else{
+                    j++;
+                }
+            }
+            else{
+                i++;
+                j=i+1;
             }
         }
-        String a="";
-        while(!st.isEmpty())
-            a=st.pop()+a;
 
-            return a;
-        
+        return sb.toString();
+    }
+
+    public void rev(StringBuilder sb,int i,int j){
+        while(i<j){
+            char temp=sb.charAt(i);
+            sb.setCharAt(i,sb.charAt(j));
+            sb.setCharAt(j,temp);
+
+            i++;
+            j--;
+        }
     }
 }
 ```

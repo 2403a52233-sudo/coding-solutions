@@ -49,39 +49,35 @@ Explanation: First, we reverse the substring "oc", then "etco", and finally, the
 ## Solution
 
 **Language:** Java  
-**Runtime:** 39 ms (beats 5.27%)  
-**Memory:** 47.8 MB (beats 6.12%)  
-**Submitted:** 2026-09-27T03:52:32.715Z  
+**Runtime:** 38 ms (beats 5.27%)  
+**Memory:** 47.5 MB (beats 6.12%)  
+**Submitted:** 2026-09-27T04:14:49.230Z  
 
 ```java
 class Solution {
     public String reverseParentheses(String s) {
-        Stack<Character> st=new Stack<>();
-
+        Stack <Character> st=new Stack<>();
         for(int i=0;i<s.length();i++){
-            char ch=s.charAt(i);
-
-            if(ch!=')'){
-                st.push(ch);
-            }
-            else{
+            char c=s.charAt(i);
+            if(c!=')')
+            st.push(c);
+            else {
                 String x="";
-
-                while(!st.isEmpty() && st.peek()!='(')
-                    x=x+st.pop();
-
-                st.pop();
-
+                while(!st.isEmpty() &&st.peek()!='('){
+                    x=x+st.pop();}
+                    st.pop();
+                
                 for(int j=0;j<x.length();j++)
-                    st.push(x.charAt(j));
+                st.push(x.charAt(j));
+
             }
         }
-
-        String ans="";
+        String a="";
         while(!st.isEmpty())
-            ans=st.pop()+ans;
+            a=st.pop()+a;
 
-        return ans;
+            return a;
+        
     }
 }
 ```

@@ -48,32 +48,45 @@ Output: [-1,-1]
 ## Solution
 
 **Language:** Java  
-**Runtime:** 1 ms (beats 0.86%)  
-**Memory:** 48.1 MB (beats 50.82%)  
-**Submitted:** 2026-09-29T06:57:17.863Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 48.3 MB (beats 14.27%)  
+**Submitted:** 2026-09-29T07:05:52.347Z  
 
 ```java
 class Solution {
     public int[] searchRange(int[] nums, int target) {
-        int i=0;
-        int j=nums.length-1;
         int first=-1;
         int last=-1;
+        int i=0;
+        int j=nums.length-1;
 
-        while(i<nums.length){
-            if(nums[i]==target){
-                first=i;
-                break;}
+        while(i<=j){
+            int mid=i+(j-i)/2;
+
+            if(nums[mid]==target){
+                first=mid;
+                j=mid-1;
+            }
+            else if(nums[mid]<target)
+                i=mid+1;
             else
-                i++;
+                j=mid-1;
         }
 
-        while(j>=0){
-            if(nums[j]==target){
-                last=j;
-                break;}
+        i=0;
+        j=nums.length-1;
+
+        while(i<=j){
+            int mid=i+(j-i)/2;
+
+            if(nums[mid]==target){
+                last=mid;
+                i=mid+1;
+            }
+            else if(nums[mid]<target)
+                i=mid+1;
             else
-                j--;
+                j=mid-1;
         }
 
         return new int[]{first,last};

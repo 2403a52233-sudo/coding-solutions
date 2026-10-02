@@ -48,20 +48,14 @@ Explanation: Reverse num to get 0, then reverse 0 to get 0, which equals num.
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 42.4 MB (beats 12.06%)  
-**Submitted:** 2026-10-02T05:48:01.917Z  
+**Runtime:** 0 ms  
+**Memory:** 41.9 MB  
+**Submitted:** 2026-10-02T05:48:55.183Z  
 
 ```java
 class Solution {
     public boolean isSameAfterReversals(int num) {
-        if(num==0)return true;
-       else if(num % 10 == 0)
-       return false;
-       else return true;
-        
-    }
-}
+       return num==0||num%10!=0;}}
 ```
 
 ---

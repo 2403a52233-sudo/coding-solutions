@@ -48,9 +48,9 @@ Explanation: Reverse num to get 0, then reverse 0 to get 0, which equals num.
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms  
-**Memory:** 41.9 MB  
-**Submitted:** 2026-10-02T05:48:55.183Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 42.1 MB (beats 46.76%)  
+**Submitted:** 2026-10-02T05:48:59.914Z  
 
 ```java
 class Solution {

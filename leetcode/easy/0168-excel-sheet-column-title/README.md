@@ -55,9 +55,9 @@ Output: "ZY"
 ## Solution
 
 **Language:** Java  
-**Runtime:** 3 ms (beats 13.81%)  
-**Memory:** 42.7 MB (beats 8.89%)  
-**Submitted:** 2026-10-02T04:45:58.492Z  
+**Runtime:** 4 ms (beats 1.13%)  
+**Memory:** 42.5 MB (beats 58.38%)  
+**Submitted:** 2026-10-02T04:51:39.094Z  
 
 ```java
 class Solution {

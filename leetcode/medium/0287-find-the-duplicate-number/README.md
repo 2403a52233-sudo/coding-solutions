@@ -54,23 +54,23 @@ Output: 3
 ## Solution
 
 **Language:** Java  
-**Runtime:** 38 ms (beats 10.77%)  
-**Memory:** 79.4 MB (beats 90.81%)  
-**Submitted:** 2026-10-07T10:41:12.322Z  
+**Runtime:** 37 ms (beats 14.34%)  
+**Memory:** 114.9 MB (beats 5.12%)  
+**Submitted:** 2026-10-07T10:51:37.254Z  
 
 ```java
 class Solution {
     public int findDuplicate(int[] nums) {
-        int i=0;
-        Arrays.sort(nums);
-        while(i<nums.length){
-            if(nums[i]==nums[i+1]) return nums[i];
-            i++;
-        }
-        return -1;
+       HashMap<Integer,Integer> hm=new HashMap<>();
+       for(int x:nums)
+       hm.put(x,hm.getOrDefault(x,0)+1);
+       for(int x:nums)
+       if(hm.get(x)>1) return x;
+       return -1;
         
     }
 }
+
 ```
 
 ---

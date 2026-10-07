@@ -46,23 +46,26 @@ Explanation: 14 is not ugly since it includes the prime factor 7.
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms  
-**Memory:** 42.1 MB  
-**Submitted:** 2026-10-07T20:38:59.011Z  
+**Runtime:** 1 ms (beats 99.13%)  
+**Memory:** 42.4 MB (beats 69.08%)  
+**Submitted:** 2026-10-07T20:39:52.333Z  
 
 ```java
 class Solution {
     public boolean isUgly(int n) {
-        if(n<=0) return false;
-    for(int i=2;i<=n;i++){
-    if(n%i==0){
-        if(i!=2 && i!=3 && i!=5)
+        if(n<=0)
             return false;
-    }
-    }
-    
-    return true;
-        
+
+        while(n%2==0)
+            n=n/2;
+
+        while(n%3==0)
+            n=n/3;
+
+        while(n%5==0)
+            n=n/5;
+
+        return n==1;
     }
 }
 ```

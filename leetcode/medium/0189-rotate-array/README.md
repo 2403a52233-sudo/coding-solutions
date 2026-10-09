@@ -50,8 +50,8 @@ rotate 2 steps to the right: [3,99,-1,-100]
 
 **Language:** Java  
 **Runtime:** 4 ms (beats 94.17%)  
-**Memory:** 268.6 MB (beats 69.99%)  
-**Submitted:** 2026-10-09T18:08:20.871Z  
+**Memory:** 268.6 MB (beats 57.57%)  
+**Submitted:** 2026-10-09T18:17:33.916Z  
 
 ```java
 class Solution {
@@ -69,33 +69,31 @@ class Solution {
       int i=0;
       int j=nums.length-1;
       while(i<j){
-        int temp=nums[i];
-        nums[i]=nums[j];
-        nums[j]=temp;
+        swap(nums,i,j);
         i++;
         j--;
       }
       i=0;
       j=k-1;
       while(i<j){
-        int temp=nums[i];
-        nums[i]=nums[j];
-        nums[j]=temp;
+          swap(nums,i,j);
         i++;
         j--;
       }
       i=k;
       j=nums.length-1;
       while(i<j){
-        int temp=nums[i];
-        nums[i]=nums[j];
-        nums[j]=temp;
+         swap(nums,i,j);
         i++;
         j--;
       }
- 
-        
     }
+public void swap(int[] nums,int i,int j){
+    int temp=nums[i];
+    nums[i]=nums[j];
+    nums[j]=temp;
+}
+    
 }
 ```
 

@@ -61,18 +61,19 @@ Given an array `nums` containing `n` distinct numbers in the range `[0, n]`, ret
 ## Solution
 
 **Language:** Java  
-**Runtime:** 8 ms (beats 16.32%)  
-**Memory:** 47.8 MB (beats 11.12%)  
-**Submitted:** 2026-10-28T17:51:42.961Z  
+**Runtime:** 6 ms (beats 18.63%)  
+**Memory:** 46.7 MB (beats 96.54%)  
+**Submitted:** 2026-10-28T17:54:41.190Z  
 
 ```java
 class Solution {
     public int missingNumber(int[] nums) {
-        Arrays.sort(nums);
-        for(int i=0;i<nums.length;i++){
-            if(nums[i]!=i) return i;
+     HashSet<Integer>hs=new HashSet<>();
+     for(int x:nums) hs.add(x);
+        for(int i=0;i<nums.length+1;i++){
+            if(!hs.contains(i)) return i;
         }
-        return nums.length;
+        return -1;
         
     }
 }

@@ -21,23 +21,28 @@ class Solution {
         while(j<al.size()){
             int l=i;
             int r=j;
-        while(l<r){
+            while(l<r){
             int tem=al.get(l);
             al.set(l,al.get(r));
             al.set(r,tem);
-            l++;
-            r--;
+            l++;r--;
         }
         i+=k;
         j+=k;
         }
-        i=0;
-        temp=head;
-        while(temp!=null){
-            temp.val=al.get(i);
-            i++;
-            temp=temp.next;
+        ListNode nh=null;
+        ListNode t=null;
+        for(int x:al){
+            ListNode n=new ListNode(x);
+            if(nh==null){
+                nh=n;
+                t=n;
+            }
+            else{
+                t.next=n;
+                t=n;
+            }
         }
-    return head;
+        return nh;
     }
 }

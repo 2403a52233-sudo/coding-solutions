@@ -42,15 +42,14 @@ Explanation: There are three ways to climb to the top.
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 41.7 MB (beats 84.67%)  
-**Submitted:** 2026-10-31T05:29:54.693Z  
+**Runtime:** 0 ms  
+**Memory:** 41 MB  
+**Submitted:** 2026-10-31T05:30:37.171Z  
 
 ```java
 class Solution {
     public int climbStairs(int n) {
-        if(n==0) return 1;
-        if(n==1) return 1;
+        if(n==0 || n==1) return 1;
         if(n<0) return 0;
         int a=1;
         int b=2;

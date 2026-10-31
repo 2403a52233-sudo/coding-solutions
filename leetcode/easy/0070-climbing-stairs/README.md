@@ -43,8 +43,8 @@ Explanation: There are three ways to climb to the top.
 
 **Language:** Java  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 41.6 MB (beats 89.74%)  
-**Submitted:** 2026-10-31T05:30:40.646Z  
+**Memory:** 41.5 MB (beats 93.89%)  
+**Submitted:** 2026-10-31T08:45:20.732Z  
 
 ```java
 class Solution {
@@ -58,6 +58,7 @@ class Solution {
             a=b;
             b=c;
         }
+
         return b;
     }
 }

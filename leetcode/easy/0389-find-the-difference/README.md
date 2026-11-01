@@ -40,14 +40,14 @@ Output: "y"
 ## Solution
 
 **Language:** Java  
-**Runtime:** 12 ms (beats 11.46%)  
-**Memory:** 42.7 MB (beats 88.11%)  
-**Submitted:** 2026-11-01T13:55:50.356Z  
+**Runtime:** 3 ms (beats 46.57%)  
+**Memory:** 42.6 MB (beats 92.64%)  
+**Submitted:** 2026-11-01T14:03:18.873Z  
 
 ```java
 class Solution {
     public char findTheDifference(String s, String t) {
-       HashMap<Character,Integer> hm=new HashMap<>();
+      /* HashMap<Character,Integer> hm=new HashMap<>();
         for(int i=0;i<s.length();i++){
             char c=s.charAt(i);
             hm.put(c,hm.getOrDefault(c,0)+1);
@@ -60,7 +60,15 @@ class Solution {
             char d=t.charAt(i);
             if(hm.get(d)<0) return d;
         }
-        return ' ';
+        return ' ';*/
+        int sum=0;
+        for(int i=0;i<s.length();i++)
+            sum+=s.charAt(i);
+        for(int i=0;i<t.length();i++)
+            sum-=t.charAt(i);
+        return (char) Math.abs(sum);
+
+
     }
 }
 

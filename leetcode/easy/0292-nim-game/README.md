@@ -54,15 +54,15 @@ Output: true
 
 **Language:** Java  
 **Runtime:** 0 ms  
-**Memory:** 40.9 MB  
-**Submitted:** 2026-11-01T12:54:04.883Z  
+**Memory:** 42 MB  
+**Submitted:** 2026-11-01T12:54:51.606Z  
 
 ```java
 class Solution {
     public boolean canWinNim(int n) {
         if(n<=3) return true;
         else if(n%3==0) return true;
-        else if(n%2==0) return false;
+        else if(n%2==0) return true;
         else if(n%2!=0) return true;
 
     return false; 

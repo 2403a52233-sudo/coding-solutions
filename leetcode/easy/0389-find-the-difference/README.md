@@ -40,21 +40,17 @@ Output: "y"
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms  
-**Memory:** 41.7 MB  
-**Submitted:** 2026-11-01T13:28:36.172Z  
+**Runtime:** 34 ms (beats 7.20%)  
+**Memory:** 46.9 MB (beats 6.90%)  
+**Submitted:** 2026-11-01T13:32:00.647Z  
 
 ```java
 class Solution {
     public char findTheDifference(String s, String t) {
-        String a = s.concat(t);
-        HashMap<Character,Integer> hm=new HashMap<>();
-        for(char x:a.toCharArray())
-            hm.put(x,hm.getOrDefault(x,0)+1);
-        for(char x:t.toCharArray()){
-            if(hm.get(x)==1) return x;
+        for(char x : s.toCharArray()) {
+            t = t.replaceFirst(String.valueOf(x), "");
         }
-    return ' ';
+        return t.charAt(0);
     }
 }
 ```

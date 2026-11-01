@@ -40,19 +40,30 @@ Output: "y"
 ## Solution
 
 **Language:** Java  
-**Runtime:** 34 ms (beats 7.20%)  
-**Memory:** 46.9 MB (beats 6.90%)  
-**Submitted:** 2026-11-01T13:32:00.647Z  
+**Runtime:** 12 ms (beats 11.46%)  
+**Memory:** 42.7 MB (beats 88.11%)  
+**Submitted:** 2026-11-01T13:55:50.356Z  
 
 ```java
 class Solution {
     public char findTheDifference(String s, String t) {
-        for(char x : s.toCharArray()) {
-            t = t.replaceFirst(String.valueOf(x), "");
+       HashMap<Character,Integer> hm=new HashMap<>();
+        for(int i=0;i<s.length();i++){
+            char c=s.charAt(i);
+            hm.put(c,hm.getOrDefault(c,0)+1);
         }
-        return t.charAt(0);
+         for(int i=0;i<t.length();i++){
+            char b=t.charAt(i);
+            hm.put(b,hm.getOrDefault(b,0)-1);
+        }
+        for(int i=0;i<t.length();i++){
+            char d=t.charAt(i);
+            if(hm.get(d)<0) return d;
+        }
+        return ' ';
     }
 }
+
 ```
 
 ---

@@ -42,9 +42,9 @@ Output: []
 ## Solution
 
 **Language:** Java  
-**Runtime:** 1 ms (beats 97.28%)  
-**Memory:** 46.4 MB (beats 86.27%)  
-**Submitted:** 2026-10-31T09:30:45.237Z  
+**Runtime:** 2 ms (beats 26.33%)  
+**Memory:** 46.3 MB (beats 89.33%)  
+**Submitted:** 2026-11-04T16:34:04.337Z  
 
 ```java
 /**
@@ -76,10 +76,11 @@ class Solution {
                 al.add(cur.val);
                 if(cur.left!=null) q.add(cur.left);
                 if(cur.right!=null) q.add(cur.right);
+
             }
             ans.add(al);
         }
-      return ans;  
+        return ans;
     }
 }
 ```

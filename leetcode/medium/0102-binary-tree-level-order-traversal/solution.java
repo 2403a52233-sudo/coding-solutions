@@ -27,9 +27,10 @@ class Solution {
                 al.add(cur.val);
                 if(cur.left!=null) q.add(cur.left);
                 if(cur.right!=null) q.add(cur.right);
+
             }
             ans.add(al);
         }
-      return ans;  
+        return ans;
     }
 }

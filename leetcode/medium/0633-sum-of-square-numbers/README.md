@@ -35,27 +35,21 @@ Output: false
 
 **Language:** Java  
 **Runtime:** 0 ms  
-**Memory:** 40.9 MB  
-**Submitted:** 2026-11-05T15:47:26.839Z  
+**Memory:** 40.3 MB  
+**Submitted:** 2026-11-05T15:59:53.299Z  
 
 ```java
 class Solution {
     public boolean judgeSquareSum(int c) {
-        int nums[]=new int[c+1];
-        for(int i=0;i<c;i++)
-            nums[i]=i;
-        int i=0;
-        int j=1;
-        while(j<c){
-            if((long)(nums[i]*nums[i])+(nums[j]*nums[j])==c){
+        long i=0;
+        long j=(long)Math.sqrt(c);
+        long sum=0;
+        while(i<=j){
+            sum=(i*i+j*j);
+            if(sum==c)
                 return true;
-            }
-            j++;
-            if(j==c){
-                i++;
-                j=i+1;
-            }
-            
+            else if(sum<c)i++;
+            else j--;
         }
     return false;  
     }

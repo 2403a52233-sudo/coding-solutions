@@ -53,12 +53,12 @@ Explanation: Every value of nums is 1, but nums[0] minimizes abs(i - start), whi
 **Language:** Java  
 **Runtime:** 0 ms  
 **Memory:** 42.1 MB  
-**Submitted:** 2026-11-07T06:26:22.563Z  
+**Submitted:** 2026-11-07T06:26:45.466Z  
 
 ```java
 class Solution {
     public int getMinDistance(int[] nums, int target, int start) {
-        int min=Integer.MIN_VALUE;
+        int min=Integer.MAX_VALUE;
         for(int i=0;i<nums.length;i++){
             if(nums[i]==target){
                 return Math.min(min,Math.abs(i-start));

@@ -51,9 +51,9 @@ Explanation: Every value of nums is 1, but nums[0] minimizes abs(i - start), whi
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms  
-**Memory:** 42.1 MB  
-**Submitted:** 2026-11-07T06:26:45.466Z  
+**Runtime:** 1 ms (beats 73.52%)  
+**Memory:** 44.7 MB (beats 85.79%)  
+**Submitted:** 2026-11-07T06:28:45.439Z  
 
 ```java
 class Solution {
@@ -61,7 +61,7 @@ class Solution {
         int min=Integer.MAX_VALUE;
         for(int i=0;i<nums.length;i++){
             if(nums[i]==target){
-                return Math.min(min,Math.abs(i-start));
+                min=Math.min(min,Math.abs(i-start));
             }
         }
     return min;

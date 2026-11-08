@@ -48,19 +48,24 @@ In this example, the second and third sentences (underlined) have the same numbe
 ## Solution
 
 **Language:** Java  
-**Runtime:** 3 ms (beats 93.23%)  
-**Memory:** 45.9 MB (beats 40.71%)  
-**Submitted:** 2026-11-08T06:27:40.819Z  
+**Runtime:** 4 ms (beats 53.42%)  
+**Memory:** 43.8 MB (beats 91.27%)  
+**Submitted:** 2026-11-08T06:27:52.143Z  
 
 ```java
 class Solution {
     public int mostWordsFound(String[] s) {
+    
         int max=0;
         for(int i=0;i<s.length;i++){
-            String arr[]=s[i].split(" ");
-            if(arr.length>max) max=arr.length;
+            int c=1;
+            for(int j=0;j<s[i].length();j++){
+                if(s[i].charAt(j)==' ') 
+                    c++;
+            }
+            if(c>max) max=c;;
         }
-        return max;
+    return max;
     }
 }
 ```

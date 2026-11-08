@@ -54,7 +54,7 @@ Explanation: It is better not to apply any change.
 **Language:** Java  
 **Runtime:** 0 ms (beats 100.00%)  
 **Memory:** 41.3 MB (beats 99.34%)  
-**Submitted:** 2026-11-08T12:03:37.871Z  
+**Submitted:** 2026-11-08T13:33:15.452Z  
 
 ```java
 class Solution {
